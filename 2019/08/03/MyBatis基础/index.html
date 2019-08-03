@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wyh160328.github.io/images/clipboard1.png">
 <meta property="og:image" content="https://wyh160328.github.io/images/clipboard2.png">
-<meta property="og:updated_time" content="2019-08-03T12:16:23.530Z">
+<meta property="og:updated_time" content="2019-08-03T12:18:39.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis基础">
 <meta name="twitter:description" content="一、MyBatis简介 Mybatis开源免费框架，原名叫做iBatis,2010年在google code，2013年迁移到GitHub  作用 2.1底层是对JDBC的封装  Mybatis优点之一： 3.1使用mybatis时不需要编写实现类，只需要写需要执行的sql命令   二、环境搭建 导入jar   ​        asm–cglib依赖的包 ​        cglib–动态代理的">
@@ -232,7 +232,7 @@
 1.10 ExceptionFactory MyBatis 中异常工厂</code></pre></li>
 <li>文字描述</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">	2.1在 MyBatis 运行开始时需要先通过 Resources 加载全局配置文件.</span><br><span class="line"></span><br><span class="line">​	2.2下面需要实例化SqlSessionFactoryBuilder 构建器.帮助 SqlSessionFactory 接口实现类 DefaultSqlSessionFactory.</span><br><span class="line">​	2.3在实例化 DefaultSqlSessionFactory 之前需要先创建 XmlConfigBuilder解析全局配置文件流,并把解析结果存放在 Configuration 中.</span><br><span class="line">​	2.4之后把Configuratin 传递给 DefaultSqlSessionFactory.到此 SqlSessionFactory 工厂创建成功.</span><br><span class="line">​	2.5由 SqlSessionFactory 工厂创建 SqlSession.</span><br><span class="line"></span><br><span class="line">​	2.6每次创建 SqlSession 时,都需要由 TransactionFactory 创建 Transaction对象,同时还需要创建 SqlSession 的执行器 Excutor</span><br><span class="line">​	2.7最后实例化DefaultSqlSession,传递给 SqlSession 接口.</span><br><span class="line">​	2.8根据项目需求使用 SqlSession 接口中的 API 完成具体的事务操作.</span><br><span class="line">​	2.9如果事务执行失败,需要进行 rollback 回滚事务.</span><br><span class="line">​	2.10如果事务执行成功提交给数据库.关闭 SqlSession</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在 MyBatis 运行开始时需要先通过 Resources 加载全局配置文件.</span><br><span class="line">​下面需要实例化SqlSessionFactoryBuilder 构建器.帮助 SqlSessionFactory 接口实现类DefaultSqlSessionFactory.</span><br><span class="line">​在实例化 DefaultSqlSessionFactory 之前需要先创建 XmlConfigBuilder解析全局配置文件流,并把解析结果存放在 Configuration 中.</span><br><span class="line">​之后把Configuratin 传递给 DefaultSqlSessionFactory.到此 SqlSessionFactory 工厂创建成功.</span><br><span class="line">​由 SqlSessionFactory 工厂创建 SqlSession.</span><br><span class="line">​每次创建 SqlSession 时,都需要由 TransactionFactory 创建 Transaction对象,同时还需要创建SqlSession 的执行器 Excutor</span><br><span class="line">​最后实例化DefaultSqlSession,传递给 SqlSession 接口.</span><br><span class="line">​根据项目需求使用 SqlSession 接口中的 API 完成具体的事务操作.</span><br><span class="line">​如果事务执行失败,需要进行 rollback 回滚事务.</span><br><span class="line">​如果事务执行成功提交给数据库.关闭 SqlSession</span><br></pre></td></tr></table></figure>
 
 <h1 id="五、MyBatis-注解"><a href="#五、MyBatis-注解" class="headerlink" title="五、MyBatis  注解"></a>五、MyBatis  注解</h1><ol>
 <li>注解:为了简化配置文件.</li>
@@ -262,7 +262,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月03日 20:16</p>
+        <p>最后更新： 2019年08月03日 20:18</p>
         <p>原始链接： <a class="post-url" href="/2019/08/03/MyBatis基础/" title="MyBatis基础">https://wyh160328.github.io/MyBlog/2019/08/03/MyBatis基础/</a></p>
         <footer>
             <a href="https://wyh160328.github.io/MyBlog">
