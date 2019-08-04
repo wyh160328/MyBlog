@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Ajax的理解 | 个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Wyh,Wyh's Blog">
+  
+  <meta name="description" content="一、什么是Ajax​    AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。 ​    不是一种新技术，是如下几种技术的组合应用： ​        *基于web标准（standards-based presentation）XHTML+CSS的表示； ​        *使用 DOM（D">
+<meta name="keywords" content="JavaScript,Ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax的理解">
+<meta property="og:url" content="https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="一、什么是Ajax​    AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。 ​    不是一种新技术，是如下几种技术的组合应用： ​        *基于web标准（standards-based presentation）XHTML+CSS的表示； ​        *使用 DOM（D">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/images/ajax%E8%AE%BF%E9%97%AE%E5%8E%9F%E7%90%86.png">
+<meta property="og:updated_time" content="2019-08-04T08:31:29.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ajax的理解">
+<meta name="twitter:description" content="一、什么是Ajax​    AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。 ​    不是一种新技术，是如下几种技术的组合应用： ​        *基于web标准（standards-based presentation）XHTML+CSS的表示； ​        *使用 DOM（D">
+<meta name="twitter:image" content="https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/images/ajax%E8%AE%BF%E9%97%AE%E5%8E%9F%E7%90%86.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Wyh&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Wyh&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Web全栈 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Wyh" target="_blank" href="//wyh0330.xyz">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wyh160328">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/wongYiHang">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Ajax的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Ajax的理解
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-08-04
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="一、什么是Ajax"><a href="#一、什么是Ajax" class="headerlink" title="一、什么是Ajax"></a>一、什么是Ajax</h1><p>​    AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。</p>
+<p>​    不是一种新技术，是如下几种技术的组合应用：</p>
+<p>​        *基于web标准（standards-based presentation）XHTML+CSS的表示；</p>
+<p>​        *使用 DOM（Document Object Model）进行动态显示及交互；</p>
+<p>​        *使用 XML 和 XSLT 进行数据交换及相关操作；</p>
+<p>​        *使用 XMLHttpRequest 进行异步数据查询、检索；</p>
+<p>​        *使用 JavaScript 将所有的东西绑定在一起。</p>
+<p>Ajax本质上是一个浏览器端的技术。</p>
+<h6 id="Ajax的优点"><a href="#Ajax的优点" class="headerlink" title="Ajax的优点"></a>Ajax的优点</h6><p>​    1.通过异步模式，提升了用户体验</p>
+<p>​    2.优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用</p>
+<h6 id="Ajax基本原理"><a href="#Ajax基本原理" class="headerlink" title="Ajax基本原理"></a>Ajax基本原理</h6><p><img src="images/ajax%E8%AE%BF%E9%97%AE%E5%8E%9F%E7%90%86.png" alt="ajax访问原理"></p>
+<p>由上图可知，传统的数据获取方式会将页面整个刷新，导致相同的代码被浏览器多次响应</p>
+<p>Ajax的访问方式打破了传统的访问模式，实现了数据的局部刷新</p>
+<h1 id="二、js使用Ajax的基本流程"><a href="#二、js使用Ajax的基本流程" class="headerlink" title="二、js使用Ajax的基本流程"></a>二、js使用Ajax的基本流程</h1><ol>
+<li><p>创建Ajax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var ajax;</span><br><span class="line">		if(window.XMLHttpRequest)&#123;</span><br><span class="line">			ajax=new window.XMLHttpRequest();</span><br><span class="line">		&#125;else if(window.ActiveXObject)&#125;&#123;</span><br><span class="line">			ajax=new ActiveXObject(&quot;Msxml2.XMLHTTP&quot;);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复写readystatement函数</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ajax.onreadystatementchange=function()&#123;</span><br><span class="line">			</span><br><span class="line">			if(ajax.readyState==0)&#123;&#125;//XMLHttpRequest已建立，但还未初始化未调用open方法</span><br><span class="line">			</span><br><span class="line">			if(ajax.readyState==1)&#123;&#125;//open方法已调用，但未调用send方法</span><br><span class="line">			</span><br><span class="line">			if(ajax.readyState==2)&#123;&#125;//send方法已调用</span><br><span class="line">			</span><br><span class="line">			if(ajax.readyState==3)&#123;&#125;//请求已发送成功，正在接受数据</span><br><span class="line">			</span><br><span class="line">			if(ajax.readyState==4)&#123;//表示数据已经接受成功</span><br><span class="line">				//判断状态码</span><br><span class="line">				if(ajax.status==200)&#123;//请求成功</span><br><span class="line">					var result=ajax.responseText;//获取响应的数据</span><br><span class="line">                    //该数据有可能为字符串，json对象，或者XML文件（dom对象）</span><br><span class="line">                    //根据自己需要再对数据进行处理</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">                if(ajax.status==404)&#123;</span><br><span class="line">                //请求资源未找到</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                if(ajax.status==500)&#123;</span><br><span class="line">                //内部服务器错误(服务器繁忙~~~)</span><br><span class="line">                &#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>发送请求</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ajax.open(method;url;boolean);</span><br><span class="line">ajax.send(null);</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、传输数据的格式说明"><a href="#三、传输数据的格式说明" class="headerlink" title="三、传输数据的格式说明"></a>三、传输数据的格式说明</h1><ol>
+<li><p>字符串格式</p>
+<p>​    后端可以直接通过HttpServletResponse实例中的getWriter().write(）方法将我们需要的数据传输给前端发送请求的ajax对象。然后前端再根据自身需求对字符串进行截取，拆分等操作。</p>
+</li>
+<li><p>json格式（最推荐）</p>
+<p>​        在后端获取完数据后，数据量往往都非常庞大，如果按照普通字符串的格式发送给前端，这样字符串处理起来的效率严重下降，因此，经常在开发中使用Gson().toJson()方法将我们获取到的对象或者集合转成json对象格式的字符串。前端接收到字符串后。可以直接使用eval将其转会json对象。这样在使用数据时就是以一种操作对象的形式在使用了（数据和对象转换都是实时的，因此维护起来方便）</p>
+</li>
+<li><p>XML格式</p>
+<p>发送数据时可以采用字符串拼接的方式写成xml格式的字符串。前端使用ajax.responseXML的方式去接受传送过来的对象。此时便可以想dom操作一样对数据进行使用。</p>
+<p>缺点:数据量大时，维护起来麻烦。特别不推荐</p>
+</li>
+</ol>
+<h1 id="四、open-方法的参数详解"><a href="#四、open-方法的参数详解" class="headerlink" title="四、open()方法的参数详解"></a>四、open()方法的参数详解</h1><ol>
+<li><p>method:有get和post两个取值，数据请求的两个方式</p>
+<p>若是get方式请求数据，提交的信息写在”url?”后面，并且以键值对的形式存在，多对则用“&amp;”隔开，send函数发送null</p>
+<p>若是用post方式请求数据，提交的信息由send函数发送。并且要在open（）函数底下设置请求头</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ajax.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>url:请求数据的url地址</p>
+</li>
+<li><p>boolean:true/false，选择异步和同步（默认异步）</p>
+<p>当该boolean值为true时，服务器请求是异步进行的，也就是脚本执行send（）方法后，不等待服务器的执行结果，而是继续执行脚本代码；</p>
+<p> 当该boolean值为false时，服务器请求是同步进行的，也就是脚本执行send（）方法后，等待服务器的执行结果的返回，若在等待过程中超时，则不再等待，继续执行后面的脚本代码！ </p>
+</li>
+</ol>
+<h1 id="五、Ajax的封装"><a href="#五、Ajax的封装" class="headerlink" title="五、Ajax的封装"></a>五、Ajax的封装</h1><p>​    由于每次使用js写ajax时，都需要重复的写到很多代码。因此，我们可以将这些重复的代码封装起来。下次调用时引入我们封装好的js文件即可,代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; method	请求方式，get或者post</span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; url		请求地址</span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; data		请求的数据，没有需要传入null</span></span><br><span class="line"><span class="comment"> * 							有数据需要传入字符串，格式为"a=1&amp;b=2"</span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; deal200	接受一个带有一个形参的js函数对象</span></span><br><span class="line"><span class="comment"> * 							形参接收的实参是ajax对象</span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; deal404	接受一个函数对象</span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; deal500	接受一个函数对象</span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; async	true/false 异步和同步的控制，默认异步</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAjax</span>(<span class="params">method,url,data,deal200,deal404,deal500,async</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//创建Ajax</span></span><br><span class="line">	<span class="keyword">var</span> ajax=getAjax();</span><br><span class="line">	ajax.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(ajax.readyState==<span class="number">4</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(ajax.status==<span class="number">200</span>)&#123;</span><br><span class="line">				deal200();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ajax.status==<span class="number">404</span>)&#123;</span><br><span class="line">				deal404();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ajax.status==<span class="number">500</span>)&#123;</span><br><span class="line">				deal500();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">"get"</span>==method)&#123;</span><br><span class="line">		ajax.open(<span class="string">"get"</span>,url+(data==<span class="literal">null</span>?<span class="string">""</span>:<span class="string">"?"</span>+data),<span class="keyword">async</span>);</span><br><span class="line">		ajax.send(<span class="literal">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">"post"</span>==method)&#123;</span><br><span class="line">		ajax.open(<span class="string">"post"</span>,url,<span class="keyword">async</span>);</span><br><span class="line">		ajax.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">		ajax.send(data);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAjax</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> ajax;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">		ajax=<span class="keyword">new</span> <span class="built_in">window</span>.XMLHttpRequest;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.ActiveXObject)&#123;</span><br><span class="line">		ajax=<span class="keyword">new</span> ActiveXObject(<span class="string">"Msxml2.XMLHTTP"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ajax;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><p>​        以上便是本人对ajax的理解和总结。可能有部分地方讲的不够详细或者有错误的，欢迎留言指正。</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年08月04日 16:31</p>
+        <p>原始链接： <a class="post-url" href="/2019/08/04/Ajax的理解/" title="Ajax的理解">https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/</a></p>
+        <footer>
+            <a href="https://wyh160328.github.io/MyBlog">
+                <img src="/images/logo.png" alt="WYH">
+                WYH
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃喝奶茶~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/&title=《Ajax的理解》 — 个人博客&pic=images/Ajax.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/&title=《Ajax的理解》 — 个人博客&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ajax的理解》 — 个人博客&url=https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/&via=https://wyh160328.github.io/MyBlog" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://wyh160328.github.io/MyBlog/2019/08/04/Ajax的理解/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/JavaScript/" class="color1">JavaScript</a>
+      
+    <a href="/tags/Ajax/" class="color5">Ajax</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、什么是Ajax"><span class="post-toc-text">一、什么是Ajax</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Ajax的优点"><span class="post-toc-text">Ajax的优点</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Ajax基本原理"><span class="post-toc-text">Ajax基本原理</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、js使用Ajax的基本流程"><span class="post-toc-text">二、js使用Ajax的基本流程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、传输数据的格式说明"><span class="post-toc-text">三、传输数据的格式说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、open-方法的参数详解"><span class="post-toc-text">四、open()方法的参数详解</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、Ajax的封装"><span class="post-toc-text">五、Ajax的封装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#六、结语"><span class="post-toc-text">六、结语</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/03/MyBatis基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">MyBatis基础</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="Ajax的理解" ></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyulWLGC0';
+        var conf = '47366c07693b20c89f60fd2e584a63a7';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 WYH<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://wyh160328.github.io/MyBlog",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/小案例/" style="font-size: 20px;">小案例</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/小案例/" style="font-size: 20px;">小案例</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
